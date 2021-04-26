@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Four Operations (Levels)</string>
+    <string name="str_cokKolay">Very Easy</string>
+    <string name="str_kolay">Easy</string>
+    <string name="str_orta">Middle</string>
+    <string name="str_zor">Hard</string>
+    <string name="str_cevapSayisi">Answers: </string>
+    <string name="str_dogruSayisi">Truths: </string>
+    <string name="str_yanlisSayisi">Wrongs: </string>
+    <string name="str_basariYuzdesi">Success: </string>
+    <string name="str_anaSayfa">HOME PAGE</string>
+    <string name="str_dogruCevaplar">Correct Answers</string>
+    <string name="str_yanlisCevaplar">Wrong Answers</string>
+    <string name="str_cevapGiriniz">enter answer</string>
+    <string name="str_sil">DELETE</string>
+    <string name="str_gonder">ENTER</string>
+    <string name="str_hakkinda">ABOUT THE GAME</string>
+    <string name="str_geri">BACK</string>
+    <string name="str_info">I am an application where you can solve questions and strengthen your brain by doing brain training until the time is over.</string>
+    <string name="str_uyari">Do you want to log out?</string>
+    <string name="str_evet">YES</string>
+    <string name="str_hayir">NO</string>
+    <string name="str_hata">ERROR</string>
+</resources>

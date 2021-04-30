@@ -9,3 +9,5 @@ geliştirmeniz için bir fırsat.
 
 UYGULAMADAN GÖRSELLER</br>
 ![alt text](https://play-lh.googleusercontent.com/vDtN83lYwRmRHQ7o1aK0xI1Nsm5Z5bT0h08aixKvWq0fvFp9O7nVxHsBwB8jI2KEqPkQ=w1366-h695-rw)
+![alt text](https://play-lh.googleusercontent.com/TK220kDXfPZawZXHfgHDvLypL_IIo8d-GZuAHV7zIaiqt3XHMfOLrdxGFLTgx5U5n2ZB=w1366-h695-rw)
+![alt text]()

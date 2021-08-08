@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Quattro operazioni (livelli)</string>
+    <string name="str_cokKolay">Molto facile</string>
+    <string name="str_kolay">Facile</string>
+    <string name="str_orta">medio</string>
+    <string name="str_zor">Difficile</string>
+    <string name="str_cevapSayisi">Risposte: </string>
+    <string name="str_dogruSayisi">verità: </string>
+    <string name="str_yanlisSayisi">torti: </string>
+    <string name="str_basariYuzdesi">Successo: </string>
+    <string name="str_anaSayfa">PAGINA INIZIALE</string>
+    <string name="str_dogruCevaplar">Risposte corrette</string>
+    <string name="str_yanlisCevaplar">Risposte sbagliate</string>
+    <string name="str_cevapGiriniz">inserisci risposta</string>
+    <string name="str_sil">ELIMINA</string>
+    <string name="str_gonder">ACCEDERE</string>
+    <string name="str_hakkinda">RIGUARDO AL GIOCO</string>
+    <string name="str_geri">INDIETRO</string>
+    <string name="str_info">Sono un applicazione in cui puoi risolvere domande e rafforzare il tuo cervello facendo un allenamento cerebrale fino allo scadere del tempo.</string>
+    <string name="str_uyari">Vuoi uscire?</string>
+    <string name="str_evet">SÌ</string>
+    <string name="str_hayir">NO</string>
+    <string name="str_hata">ERRORE</string>
+</resources>

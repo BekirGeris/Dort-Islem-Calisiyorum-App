@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Vier Operationen (Ebenen)</string>
+    <string name="str_cokKolay">Sehr leicht</string>
+    <string name="str_kolay">Einfach</string>
+    <string name="str_orta">Mitte</string>
+    <string name="str_zor">Schwer</string>
+    <string name="str_cevapSayisi">Antworten: </string>
+    <string name="str_dogruSayisi">Wahrheiten: </string>
+    <string name="str_yanlisSayisi">Falsch: </string>
+    <string name="str_basariYuzdesi">Erfolg: </string>
+    <string name="str_anaSayfa">STARTSEITE</string>
+    <string name="str_dogruCevaplar">Korrekte Antworten</string>
+    <string name="str_yanlisCevaplar">Falsche Antworten</string>
+    <string name="str_cevapGiriniz">Antwort eingeben</string>
+    <string name="str_sil">LÖSCHEN</string>
+    <string name="str_gonder">EINGEBEN</string>
+    <string name="str_hakkinda">ÜBER DAS SPIEL</string>
+    <string name="str_geri">ZURÜCK</string>
+    <string name="str_info">Ich bin eine Anwendung, bei der Sie Fragen lösen und Ihr Gehirn stärken können, indem Sie Gehirntraining machen, bis die Zeit vorbei ist.</string>
+    <string name="str_uyari">Möchten Sie sich abmelden?</string>
+    <string name="str_evet">JA</string>
+    <string name="str_hayir">NEIN</string>
+    <string name="str_hata">ERROR</string>
+</resources>

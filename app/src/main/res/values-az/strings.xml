@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Dörd Əməliyyat (Səviyyə)</string>
+    <string name="str_cokKolay">Çox asan</string>
+    <string name="str_kolay">Asan</string>
+    <string name="str_orta">Orta</string>
+    <string name="str_zor">Çətin</string>
+    <string name="str_cevapSayisi">Cavablar: </string>
+    <string name="str_dogruSayisi">Həqiqətlər: </string>
+    <string name="str_yanlisSayisi">Səhvlər: </string>
+    <string name="str_basariYuzdesi">Uğur: </string>
+    <string name="str_anaSayfa">ANA SƏHİFƏ</string>
+    <string name="str_dogruCevaplar">Düzgün cavablar</string>
+    <string name="str_yanlisCevaplar">Yanlış cavablar</string>
+    <string name="str_cevapGiriniz">cavab daxil edin</string>
+    <string name="str_sil">SİL</string>
+    <string name="str_gonder">Daxil edin</string>
+    <string name="str_hakkinda">OYUN HAQQINDA</string>
+    <string name="str_geri">GERİ</string>
+    <string name="str_info">Sualları həll edə biləcəyiniz və vaxt bitənə qədər beyin təhsili verərək beyninizi gücləndirə biləcəyiniz bir proqramam.</string>
+    <string name="str_uyari">Giriş etmək istəyirsiniz?</string>
+    <string name="str_evet">Bəli</string>
+    <string name="str_hayir">YOX</string>
+    <string name="str_hata">XƏTƏ</string>
+</resources>

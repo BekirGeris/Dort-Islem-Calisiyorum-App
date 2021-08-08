@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">أربع عمليات (مستويات)</string>
+    <string name="str_cokKolay">سهل جدا</string>
+    <string name="str_kolay">سهل</string>
+    <string name="str_orta">وسط</string>
+    <string name="str_zor">الصعب</string>
+    <string name="str_cevapSayisi">الإجابات: </string>
+    <string name="str_dogruSayisi">حقائق: </string>
+    <string name="str_yanlisSayisi">أخطاء: </string>
+    <string name="str_basariYuzdesi">نجاح: </string>
+    <string name="str_anaSayfa">الصفحة الرئيسية</string>
+    <string name="str_dogruCevaplar">الإجابات الصحيحة</string>
+    <string name="str_yanlisCevaplar">إجابات خاطئة</string>
+    <string name="str_cevapGiriniz">أدخل الجواب</string>
+    <string name="str_sil">حذف</string>
+    <string name="str_gonder">أدخل</string>
+    <string name="str_hakkinda">عن اللعبة</string>
+    <string name="str_geri">عودة</string>
+    <string name="str_info">أنا تطبيق حيث يمكنك حل الأسئلة وتقوية عقلك عن طريق القيام بتدريب عقلي حتى ينتهي الوقت.</string>
+    <string name="str_uyari">هل ترغب بالخروج؟</string>
+    <string name="str_evet">نعم</string>
+    <string name="str_hayir">لا</string>
+    <string name="str_hata">خطأ</string>
+</resources>

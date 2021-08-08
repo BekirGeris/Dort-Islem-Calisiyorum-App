@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">四種操作（級別）</string>
+    <string name="str_cokKolay">很容易</string>
+    <string name="str_kolay">簡單的</string>
+    <string name="str_orta">中間</string>
+    <string name="str_zor">難的</string>
+    <string name="str_cevapSayisi">答案: </string>
+    <string name="str_dogruSayisi">真相: </string>
+    <string name="str_yanlisSayisi">錯誤: </string>
+    <string name="str_basariYuzdesi">成功: </string>
+    <string name="str_anaSayfa">主頁</string>
+    <string name="str_dogruCevaplar">正確答案</string>
+    <string name="str_yanlisCevaplar">錯誤答案</string>
+    <string name="str_cevapGiriniz">輸入答案</string>
+    <string name="str_sil">刪除</string>
+    <string name="str_gonder">進入</string>
+    <string name="str_hakkinda">關於遊戲</string>
+    <string name="str_geri">背部</string>
+    <string name="str_info">我是一個應用程序，您可以在其中通過進行大腦訓練直到時間結束來解決問題並增強大腦。</string>
+    <string name="str_uyari">您要退出嗎？</string>
+    <string name="str_evet">是的</string>
+    <string name="str_hayir">不</string>
+    <string name="str_hata">錯誤</string>
+</resources>

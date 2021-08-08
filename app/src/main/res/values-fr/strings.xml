@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Quatre opérations (niveaux)</string>
+    <string name="str_cokKolay">Très facile</string>
+    <string name="str_kolay">Facile</string>
+    <string name="str_orta">Milieu</string>
+    <string name="str_zor">Difficile</string>
+    <string name="str_cevapSayisi">Réponses: </string>
+    <string name="str_dogruSayisi">vérités: </string>
+    <string name="str_yanlisSayisi">Les torts: </string>
+    <string name="str_basariYuzdesi">Succès: </string>
+    <string name="str_anaSayfa">PAGE DACCUEIL</string>
+    <string name="str_dogruCevaplar">Réponses correctes</string>
+    <string name="str_yanlisCevaplar">Mauvaises réponses</string>
+    <string name="str_cevapGiriniz">entrer la réponse</string>
+    <string name="str_sil">EFFACER</string>
+    <string name="str_gonder">ENTRER</string>
+    <string name="str_hakkinda">À PROPOS DU JEU</string>
+    <string name="str_geri">DOS</string>
+    <string name="str_info">Je suis une application où vous pouvez résoudre des questions et renforcer votre cerveau en faisant un entraînement cérébral jusqu à ce que le temps soit écoulé.</string>
+    <string name="str_uyari">Voulez-vous vous déconnecter ?</string>
+    <string name="str_evet">OUI</string>
+    <string name="str_hayir">NON</string>
+    <string name="str_hata">ERREUR</string>
+</resources>

@@ -3,66 +3,103 @@ package com.bek.dortislemcalisiyorum;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
+import android.view.View;
+import android.widget.Toast;
 
-public class AnaSayfa extends AppCompatActivity {
+import com.unity3d.ads.IUnityAdsListener;
+import com.unity3d.ads.IUnityAdsLoadListener;
+import com.unity3d.ads.IUnityAdsShowListener;
+import com.unity3d.ads.UnityAds;
+import com.unity3d.services.UnityServices;
+import com.unity3d.services.banners.BannerView;
+import com.unity3d.services.banners.IUnityBannerListener;
+import com.unity3d.services.banners.UnityBannerSize;
+import com.unity3d.services.banners.UnityBanners;
+import com.unity3d.services.banners.view.BannerPosition;
+import com.unity3d.services.monetization.IUnityMonetizationListener;
+import com.unity3d.services.monetization.UnityMonetization;
+import com.unity3d.services.monetization.placementcontent.core.PlacementContent;
 
-    private AdView mAdView;
+public class AnaSayfa extends AppCompatActivity{
 
-    Boolean sesFlag = true;
+    private String gameId = "*******";
+    private Boolean testMode = true;
+    private  String bannerId = "dortIslemBanner";
+    private String interstitial = "dortIslemInter";
+
     ImageButton info;
-    ImageButton sesAyar;
-
     LinearLayout cokKolayOyun;
     LinearLayout kolayOyun;
     LinearLayout ortaOyun;
     LinearLayout zorOyun;
-
-    MediaPlayer muzik;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ana_sayfa);
 
-        //SharedPreferences GET = PreferenceManager.getDefaultSharedPreferences(this);
-        //SharedPreferences.Editor SET = GET.edit();
+        UnityAds.initialize (AnaSayfa.this, gameId, testMode);
 
         tanimlamalar();
-        //sesFlag = GET.getBoolean("sesF", true);
-
-
-        //muzik = MediaPlayer.create(getApplicationContext(), R.raw.music);
-
-        //muxikKontrol();
-        //muzik.setLooping(true);
 
         buttonKontrol();
 
-        uygulamaIDtanımlama();
-        bannerReklam();
+        unityAdsBaner();
+    }
 
-        /*sesAyar.setOnClickListener(new View.OnClickListener() {
+    public  void unityAdsBaner(){
+        LinearLayout linearLayout = findViewById(R.id.banner_unity);
+        BannerView bannerView = new BannerView(AnaSayfa.this, bannerId, new UnityBannerSize(328, 50));
+        bannerView.load();
+        linearLayout.addView(bannerView);
+    }
+
+    public  void unityAdsVideo(){
+        UnityAds.load(interstitial, new IUnityAdsLoadListener() {
             @Override
-            public void onClick(View v) {
-                sesFlag = !sesFlag;
-                muxikKontrol();
-                SET.putBoolean("sesF", sesFlag);
-                SET.commit();
-            }
-        });*/
+            public void onUnityAdsAdLoaded(String s) {
 
-        //onBackPressed();
+            }
+
+            @Override
+            public void onUnityAdsFailedToLoad(String s, UnityAds.UnityAdsLoadError unityAdsLoadError, String s1) {
+
+            }
+        });
+
+        if (UnityAds.isReady(interstitial)){
+
+            UnityAds.show(AnaSayfa.this, interstitial, new IUnityAdsShowListener() {
+                @Override
+                public void onUnityAdsShowFailure(String s, UnityAds.UnityAdsShowError unityAdsShowError, String s1) {
+
+                }
+
+                @Override
+                public void onUnityAdsShowStart(String s) {
+
+                }
+
+                @Override
+                public void onUnityAdsShowClick(String s) {
+
+                }
+
+                @Override
+                public void onUnityAdsShowComplete(String s, UnityAds.UnityAdsShowCompletionState unityAdsShowCompletionState) {
+
+                }
+            });
+        }
     }
 
     public void tanimlamalar() {
@@ -71,23 +108,6 @@ public class AnaSayfa extends AppCompatActivity {
         ortaOyun = findViewById(R.id.btn_orta);
         zorOyun = findViewById(R.id.btn_zor);
         info = findViewById(R.id.btn_info);
-        //sesAyar = findViewById(R.id.btn_ses);
-    }
-
-    public void muxikKontrol() {
-        if (sesFlag) {
-            sesAyar.setImageResource(R.drawable.volume_up);
-            if (muzik.isPlaying() == false) {
-                muzik.start();
-            }
-            //ses acık
-        } else {
-            sesAyar.setImageResource(R.drawable.volume_off);
-            if (muzik.isPlaying() == true) {
-                muzik.pause();
-            }
-            //ses kapalı
-        }
     }
 
     public void buttonKontrol() {
@@ -155,17 +175,6 @@ public class AnaSayfa extends AppCompatActivity {
     public void infoSayfasinaGit() {
         Intent infoSayfa = new Intent(AnaSayfa.this, infoSayfa.class);
         startActivity(infoSayfa);
-    }
-
-    public void uygulamaIDtanımlama() {
-        // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
-        MobileAds.initialize(this, "ca-app-pub-3194548974238198~3401169677");
-    }
-
-    public void bannerReklam() {
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
     }
 
     @Override

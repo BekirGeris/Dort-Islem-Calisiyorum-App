@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,12 +17,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.unity3d.ads.IUnityAdsListener;
+import com.unity3d.ads.UnityAds;
+import com.unity3d.services.banners.BannerView;
+import com.unity3d.services.banners.UnityBannerSize;
 
 import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class Sorular extends AppCompatActivity {
+
+    private String gameId = "*******";
+    private Boolean testMode = true;
+    private  String bannerId = "dortIslemBanner";
+    private String interstitial = "dortIslemInter";
 
     String uyari;
     String dogruCevap = "";
@@ -53,6 +63,8 @@ public class Sorular extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sorular);
 
+        UnityAds.initialize (Sorular.this, gameId, testMode);
+
         tanimalamalar();
 
         oncekiSayfaBilgileriniAl();
@@ -65,8 +77,15 @@ public class Sorular extends AppCompatActivity {
 
         progresBarAyarKontrol();
 
-        bannerReklam();
+        unityAdsBaner();
 
+    }
+
+    public  void unityAdsBaner(){
+        LinearLayout linearLayout = findViewById(R.id.banner_unity);
+        BannerView bannerView = new BannerView(Sorular.this, bannerId, new UnityBannerSize(328, 50));
+        bannerView.load();
+        linearLayout.addView(bannerView);
     }
 
     public void tanimalamalar() {
@@ -382,11 +401,4 @@ public class Sorular extends AppCompatActivity {
         alert.show();
     }
 
-    public void bannerReklam() {
-        // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
-        MobileAds.initialize(this, "ca-app-pub-3194548974238198~3401169677");
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-    }
 }

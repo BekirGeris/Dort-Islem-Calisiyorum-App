@@ -11,21 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DortIslemCalisiyorum">
-        <activity android:name="com.com.bekdevelop.dortislemseviyeli.dortislemcalisiyorum.infoSayfa"></activity>
-        <activity android:name="com.com.bekdevelop.dortislemseviyeli.dortislemcalisiyorum.AnaSayfa">
+        <activity android:name="com.bek.dortislemcalisiyorum.infoSayfa"></activity>
+        <activity android:name="com.bek.dortislemcalisiyorum.AnaSayfa">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.com.bekdevelop.dortislemseviyeli.dortislemcalisiyorum.Sorular" />
+        <activity android:name="com.bek.dortislemcalisiyorum.Sorular" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-1010640084929953~6066308490" />
 
-        <activity android:name="com.com.bekdevelop.dortislemseviyeli.dortislemcalisiyorum.SonucActivity" />
+        <activity android:name="com.bek.dortislemcalisiyorum.SonucActivity" />
     </application>
 
 </manifest>

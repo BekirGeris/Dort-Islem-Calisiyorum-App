@@ -3,6 +3,7 @@ package com.bek.dortislemcalisiyorum;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,24 +15,24 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.unity3d.ads.IUnityAdsListener;
 import com.unity3d.ads.UnityAds;
 import com.unity3d.services.banners.BannerView;
 import com.unity3d.services.banners.UnityBannerSize;
 
 import java.util.Objects;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Sorular extends AppCompatActivity {
 
-    private String gameId = "*******";
-    private Boolean testMode = true;
+    private String gameId = "4251843";
+    private Boolean testMode = false;
     private  String bannerId = "dortIslemBanner";
     private String interstitial = "dortIslemInter";
+
+    final int num = 11;
+    int number = num;
+    Runnable runnable;
+    Handler handler = new Handler();
 
     String uyari;
     String dogruCevap = "";
@@ -51,6 +52,7 @@ public class Sorular extends AppCompatActivity {
     TextView sorularEkran;
     TextView dorgruCevaplar;
     TextView yanlisCevaplar;
+    TextView time;
 
     EditText edtCevap;
 
@@ -73,23 +75,22 @@ public class Sorular extends AppCompatActivity {
 
         butonlar();
 
-       silButonu();
+        silButonu();
 
-        progresBarAyarKontrol();
+        timeControl();
 
         unityAdsBaner();
 
     }
 
     public  void unityAdsBaner(){
-        LinearLayout linearLayout = findViewById(R.id.banner_unity);
+        LinearLayout linearLayout = findViewById(R.id.banner_unity_sorular);
         BannerView bannerView = new BannerView(Sorular.this, bannerId, new UnityBannerSize(328, 50));
         bannerView.load();
         linearLayout.addView(bannerView);
     }
 
     public void tanimalamalar() {
-        yuklemeCubugu = findViewById(R.id.pro_bar);
         sorularEkran = findViewById(R.id.text_sorularEkran);
         gonder = findViewById(R.id.btn_Enter);
         edtCevap = findViewById(R.id.edt_cevap);
@@ -106,6 +107,7 @@ public class Sorular extends AppCompatActivity {
         b9 = findViewById(R.id.btn_9);
         dorgruCevaplar = findViewById(R.id.text_dogruCevaplar);
         yanlisCevaplar = findViewById(R.id.text_yanlisCevaplar);
+        time = findViewById(R.id.time);
         uyari = getString(R.string.app_name);
     }
 
@@ -117,6 +119,8 @@ public class Sorular extends AppCompatActivity {
     public void seviyeTespiti() {
 
         if (Objects.equals(butoonAdi, "CokKolay")) {
+            time.setText((num - 5) + "");
+            number = num - 5;
             sonuc = Seviye(5);
             gonder.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -127,10 +131,12 @@ public class Sorular extends AppCompatActivity {
                             dogruCevap = dogruCevap + "\n" + sorularEkran.getText() + "=>" + getCevap();
                             dogruCevapSayisi++;
                             cevapSayisi++;
+                            number = num - 5;
                         }else {
                             yanlisCevap = yanlisCevap + "\n" + sorularEkran.getText() + "=>" + getCevap();
                             yanlisCevapSayisi++;
                             cevapSayisi++;
+                            sonucSayfasinaGit();
                         }
                         sonuc = Seviye(5);
                         edtCevap.setText("");
@@ -144,7 +150,8 @@ public class Sorular extends AppCompatActivity {
         }
 
         if (Objects.equals(butoonAdi, "Kolay")){
-
+            time.setText((num - 5) + "");
+            number = num - 5;
             sonuc = Seviye(9);
             gonder.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -155,10 +162,12 @@ public class Sorular extends AppCompatActivity {
                             dogruCevap = dogruCevap + "\n" + sorularEkran.getText() + "=>" + getCevap();
                             dogruCevapSayisi++;
                             cevapSayisi++;
+                            number = num - 5;
                         }else {
                             yanlisCevap = yanlisCevap + "\n" + sorularEkran.getText() + "=>" + getCevap();
                             yanlisCevapSayisi++;
                             cevapSayisi++;
+                            sonucSayfasinaGit();
                         }
                         sonuc = Seviye(9);
                         edtCevap.setText("");
@@ -171,7 +180,8 @@ public class Sorular extends AppCompatActivity {
             });
 
         }else if (Objects.equals(butoonAdi, "Orta")) {
-
+            time.setText((num - 5) + "");
+            number = num - 5;
             sonuc = Seviye(14);
             gonder.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -182,10 +192,12 @@ public class Sorular extends AppCompatActivity {
                             dogruCevap = dogruCevap + "\n" + sorularEkran.getText() + "=>" + getCevap();
                             dogruCevapSayisi++;
                             cevapSayisi++;
+                            number = num - 5;
                         }else {
                             yanlisCevap = yanlisCevap + "\n" + sorularEkran.getText() + "=>" + getCevap();
                             yanlisCevapSayisi++;
                             cevapSayisi++;
+                            sonucSayfasinaGit();
                         }
                         sonuc = Seviye(14);
                         edtCevap.setText("");
@@ -198,7 +210,8 @@ public class Sorular extends AppCompatActivity {
             });
 
         }else  if (Objects.equals(butoonAdi, "Zor")) {
-
+            time.setText(num + "");
+            number = num;
             sonuc = Seviye(29);
             gonder.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -209,10 +222,12 @@ public class Sorular extends AppCompatActivity {
                             dogruCevap = dogruCevap + "\n" + sorularEkran.getText() + "=>" + getCevap();
                             dogruCevapSayisi++;
                             cevapSayisi++;
+                            number = num;
                         }else {
                             yanlisCevap = yanlisCevap + "\n" + sorularEkran.getText() + "=>" + getCevap();
                             yanlisCevapSayisi++;
                             cevapSayisi++;
+                            sonucSayfasinaGit();
                         }
                         sonuc = Seviye(29);
                         edtCevap.setText("");
@@ -326,34 +341,26 @@ public class Sorular extends AppCompatActivity {
         });
     }
 
-    public void progresBarAyarKontrol() {
-        //zamanlayıcı
-        Timer zamanlayici = new Timer();
-
-        //zamanlayıcı gorevi
-        TimerTask zamanlayiciGorevi = new TimerTask() {
+    public void timeControl() {
+        runnable = new Runnable() {
             @Override
             public void run() {
-
-                sayac -= 0.3;
-
-                //Progresse sayacı atamak
-                yuklemeCubugu.setProgress((int)sayac);
-
-                //sayac kaca kadar
-                if (sayac < 0) {
-                    zamanlayici.cancel();
+                time.setText(number + "");
+                number--;
+                time.setText(number + "");
+                if (number == 0){
+                    handler.removeCallbacks(this);
                     sonucSayfasinaGit();
                 }
-
+                handler.postDelayed(runnable,1000);
             }
         };
 
-        //zamanlayıcı cizelgesini ayarlama
-        zamanlayici.schedule(zamanlayiciGorevi, 0, 100);
+        handler.post(runnable);
     }
 
     private void sonucSayfasinaGit() {
+        handler.removeCallbacks(runnable);
         Intent sonucSayfa = new Intent(Sorular.this, SonucActivity.class);
         sonucSayfa.putExtra("Ds", String.valueOf(dogruCevapSayisi));
         sonucSayfa.putExtra("Ys", String.valueOf(yanlisCevapSayisi));

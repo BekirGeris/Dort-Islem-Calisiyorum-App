@@ -54,7 +54,7 @@
         <LinearLayout
             android:layout_alignParentBottom="true"
             android:gravity="bottom"
-            android:id="@+id/banner_unity"
+            android:id="@+id/banner_unity_info"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:orientation="horizontal" />

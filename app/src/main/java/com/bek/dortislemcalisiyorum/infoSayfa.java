@@ -22,8 +22,8 @@ import com.unity3d.services.banners.UnityBannerSize;
 
 public class infoSayfa extends AppCompatActivity {
 
-    private String gameId = "*******";
-    private Boolean testMode = true;
+    private String gameId = "4251843";
+    private Boolean testMode = false;
     private  String bannerId = "dortIslemBanner";
     private String interstitial = "dortIslemInter";
 
@@ -52,13 +52,13 @@ public class infoSayfa extends AppCompatActivity {
     }
 
     public  void unityAdsBaner(){
-        LinearLayout linearLayout = findViewById(R.id.banner_unity);
+        LinearLayout linearLayout = findViewById(R.id.banner_unity_info);
         BannerView bannerView = new BannerView(infoSayfa.this, bannerId, new UnityBannerSize(328, 50));
         bannerView.load();
         linearLayout.addView(bannerView);
     }
 
-    public  void unityAdsVideo(){
+    public void unityAdsVideo(){
         UnityAds.load(interstitial, new IUnityAdsLoadListener() {
             @Override
             public void onUnityAdsAdLoaded(String s) {

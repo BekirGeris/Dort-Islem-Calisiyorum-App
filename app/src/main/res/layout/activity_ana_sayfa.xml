@@ -153,7 +153,7 @@
         <LinearLayout
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/btn_info"
-            android:id="@+id/banner_unity"
+            android:id="@+id/banner_unity_ana"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal" />

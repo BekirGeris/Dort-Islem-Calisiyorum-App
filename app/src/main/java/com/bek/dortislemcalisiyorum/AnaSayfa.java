@@ -3,36 +3,24 @@ package com.bek.dortislemcalisiyorum;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import android.view.View;
-import android.widget.Toast;
 
-import com.unity3d.ads.IUnityAdsListener;
 import com.unity3d.ads.IUnityAdsLoadListener;
 import com.unity3d.ads.IUnityAdsShowListener;
 import com.unity3d.ads.UnityAds;
-import com.unity3d.services.UnityServices;
 import com.unity3d.services.banners.BannerView;
-import com.unity3d.services.banners.IUnityBannerListener;
 import com.unity3d.services.banners.UnityBannerSize;
-import com.unity3d.services.banners.UnityBanners;
-import com.unity3d.services.banners.view.BannerPosition;
-import com.unity3d.services.monetization.IUnityMonetizationListener;
-import com.unity3d.services.monetization.UnityMonetization;
-import com.unity3d.services.monetization.placementcontent.core.PlacementContent;
 
 public class AnaSayfa extends AppCompatActivity{
 
-    private String gameId = "*******";
-    private Boolean testMode = true;
+    private String gameId = "4251843";
+    private Boolean testMode = false;
     private  String bannerId = "dortIslemBanner";
     private String interstitial = "dortIslemInter";
 
@@ -57,7 +45,7 @@ public class AnaSayfa extends AppCompatActivity{
     }
 
     public  void unityAdsBaner(){
-        LinearLayout linearLayout = findViewById(R.id.banner_unity);
+        LinearLayout linearLayout = findViewById(R.id.banner_unity_ana);
         BannerView bannerView = new BannerView(AnaSayfa.this, bannerId, new UnityBannerSize(328, 50));
         bannerView.load();
         linearLayout.addView(bannerView);

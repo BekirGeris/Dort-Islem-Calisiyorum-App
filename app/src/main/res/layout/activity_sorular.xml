@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:background="@drawable/sayi"
+    android:background="@drawable/arka"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,33 +9,38 @@
     android:layout_height="match_parent"
     tools:context=".Sorular">
 
-    <ProgressBar
-        android:layout_weight="0.5"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
-        android:background="#BF736464"
-        android:id="@+id/pro_bar"
-        android:layout_gravity="center"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-
-
-    <TextView
-        android:layout_weight="10"
-        android:id="@+id/text_sorularEkran"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_weight="9"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:background="#E47E7575"
-        android:gravity="center"
-        android:text="10 x 15 = ?"
-        android:textSize="60dp"
-        android:textStyle="bold">
-    </TextView>
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_sorularEkran"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#E47E7575"
+            android:gravity="center"
+            android:text="10 x 15 = ?"
+            android:textSize="60dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"></TextView>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textColor="#3E3636"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
         android:layout_weight="2"
@@ -219,14 +224,13 @@
 
     <RelativeLayout
         android:layout_gravity="center"
-        android:layout_weight="2"
         android:layout_width="wrap_content"
-        android:layout_height="0dp">
+        android:layout_height="50dp">
 
         <LinearLayout
             android:layout_alignParentBottom="true"
             android:gravity="bottom"
-            android:id="@+id/banner_unity"
+            android:id="@+id/banner_unity_sorular"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:orientation="horizontal" />

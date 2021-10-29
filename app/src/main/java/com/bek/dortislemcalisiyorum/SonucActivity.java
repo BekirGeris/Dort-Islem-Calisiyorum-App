@@ -11,11 +11,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.unity3d.ads.IUnityAdsListener;
 import com.unity3d.ads.IUnityAdsLoadListener;
 import com.unity3d.ads.IUnityAdsShowListener;
 import com.unity3d.ads.UnityAds;
@@ -24,8 +22,8 @@ import com.unity3d.services.banners.UnityBannerSize;
 
 public class SonucActivity<lateinit, mInterstitialAd, val> extends AppCompatActivity {
 
-    private String gameId = "*******";
-    private Boolean testMode = true;
+    private String gameId = "4251843";
+    private Boolean testMode = false;
     private  String bannerId = "dortIslemBanner";
     private String interstitial = "Interstitial_Android";
 
@@ -65,15 +63,13 @@ public class SonucActivity<lateinit, mInterstitialAd, val> extends AppCompatActi
 
         anaSayfaBtnKontrol();
 
-        if (Integer.parseInt(oranS) < 90){
-            unityAdsVideo();
-        }
+        unityAdsVideo();
 
         unityAdsBaner();
     }
 
     public  void unityAdsBaner(){
-        LinearLayout linearLayout = findViewById(R.id.banner_unity);
+        LinearLayout linearLayout = findViewById(R.id.banner_unity_sonuc);
         BannerView bannerView = new BannerView(SonucActivity.this, bannerId, new UnityBannerSize(328, 50));
         bannerView.load();
         linearLayout.addView(bannerView);
